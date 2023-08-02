@@ -1,7 +1,7 @@
 export default function InPersonBrochure() {
     return (
-        <div>
-            <h1>In-Person Brochure</h1>
+        <div className="brochure container">
+            <h2>In-Person Brochure</h2>
             <div className="product">
                 <div>image</div>
                 <div>title</div>
