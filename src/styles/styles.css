@@ -164,3 +164,32 @@
     font-weight: bolder;
     text-align: center;
 }
+
+
+.NotFound {
+    color: #000000;
+    text-align: center;
+    margin: 2rem;
+    font-weight: bold;
+    font-size: 2rem;
+    animation: ColorChanger 0.45s ease-in infinite normal;
+    -webkit-animation: ColorChanger 0.45s ease-in infinite normal;
+}
+
+@keyframes ColorChanger {
+    0% {
+        color: #ac2e2e;
+    }
+    25% {
+        color: #e5f348;
+    }
+    50% {
+        color: #2d7b1e;
+    }
+    75% {
+        color: #0026ff;
+    }
+    100% {
+        color: #602381;
+    }
+}
