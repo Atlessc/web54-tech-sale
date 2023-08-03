@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import '../styles/styles.css';
+import '../styles/nav.css'
 
 export default function NavBar() {
     const [menuOpen, setMenuOpen] = useState(false);

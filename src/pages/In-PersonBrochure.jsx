@@ -1,3 +1,6 @@
+import '../styles/brochure.css';
+import '../styles/styles.css';
+
 export default function InPersonBrochure() {
     return (
         <div className="brochure container">

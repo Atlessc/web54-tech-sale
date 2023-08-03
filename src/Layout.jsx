@@ -9,7 +9,7 @@ export default function Layout() {
         <main>
           <Outlet />
         </main>
-        <footer>Footer</footer>
+        <footer className='footer'>Footer</footer>
       </div>
     );
   }
