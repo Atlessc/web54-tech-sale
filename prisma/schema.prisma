@@ -7,7 +7,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url      = env("VITE_DATABASE_URL")
 }
 
 model Product {
@@ -17,7 +17,7 @@ model Product {
   description String
   price       Float
   availability String
-  quanyiy     Int
+  quantity     Int
 }
 
 model AdminUser {
