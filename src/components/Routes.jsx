@@ -11,7 +11,7 @@ const routes = [
     element: <Layout />,
     children: [
       { path: '/', element: <Home /> },
-      { path: 'in-person-brochure', element: <InPersonBrochure /> },
+      { path: 'brochure', element: <InPersonBrochure /> },
       { path: 'online-sale', element: <OnlineSale /> },
       { path: 'dashboard', element: <Dashboard /> },
       { path: '*', element: <NotFound />}

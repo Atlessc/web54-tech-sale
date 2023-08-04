@@ -9,7 +9,7 @@ export default function Home() {
             <h2 className="home-title">Welcome to the Adidas Tech Sale!</h2>
             <div className="home hero">{<img src="computer-organized.jpg" alt="Hero Picture"/>}</div>
             <div className="Links">
-                <Link className="link-container" to='/in-person-brochure'>
+                <Link className="link-container" to='/brochure'>
                 <div>
                     <div className="link-image"><img src="/in-person.jpg" alt="In Person"/></div>
                     <div className="link-title">In Person <br/> Brochure</div>
