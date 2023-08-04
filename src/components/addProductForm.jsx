@@ -65,7 +65,8 @@ function AddProductForm() {
       </div>
       <br />
       <div className='submit-button'>
-      <input type="submit" value="Submit" />
+      {/* <input type="submit" value="Submit" /> */}
+      <input type="button" value="Submit" />
       </div>
     </form>
     </div>
