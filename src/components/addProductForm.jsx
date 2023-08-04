@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import '../styles/styles.css'
 
 function AddProductForm() {
   const [name, setName] = useState('')
@@ -33,29 +34,41 @@ function AddProductForm() {
   }
 
   return (
+    <div className='form-container'>
     <form onSubmit={handleSubmit}>
+      <div className='input-section'>
       <label>
         Name:
         <input type="text" value={name} onChange={event => setName(event.target.value)} />
       </label>
+      </div>
       <br />
+      <div className='input-section'>
       <label>
         Description:
         <input type="text" value={description} onChange={event => setDescription(event.target.value)} />
       </label>
+      </div>
       <br />
+      <div className='input-section'>
       <label>
         Price:
         <input type="text" value={price} onChange={event => setPrice(event.target.value)} />
       </label>
+      </div>
       <br />
+      <div className='input-section'>
       <label>
         Availability:
         <input type="text" value={availability} onChange={event => setAvailability(event.target.value)} />
       </label>
+      </div>
       <br />
-      <input type="submit" value="Add Product" />
+      <div className='submit-button'>
+      <input type="submit" value="Submit" />
+      </div>
     </form>
+    </div>
   )
 }
 

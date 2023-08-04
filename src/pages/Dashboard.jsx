@@ -1,5 +1,6 @@
 import AddProductForm from "../components/addProductForm";
 import { useState } from 'react';
+import '../styles/styles.css'
 
 export default function Dashboard() {
 
@@ -7,6 +8,7 @@ export default function Dashboard() {
 
     const ToggleViewAddProductForm = () => {
         setShowAddProductForm(!showAddProductForm);
+        console.log(showAddProductForm)
     }
 
     return (
@@ -15,11 +17,13 @@ export default function Dashboard() {
             <button onClick={ToggleViewAddProductForm}>
                 <div>Add Product</div>
             </button>
-            {showAddProductForm ? null :
-            <dialog>
-                <div onClick={ToggleViewAddProductForm}>X</div>
+            {showAddProductForm ?
+            <div className="dialog">
+                <div onClick={ToggleViewAddProductForm} className="close-form">X</div>
                 <AddProductForm />
-            </dialog>
+            </div>
+            :
+            null
     }
         </div>
     );
