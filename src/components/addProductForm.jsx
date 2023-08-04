@@ -1,35 +1,34 @@
 import { useState } from 'react'
-import { PrismaClient } from '@prisma/client'
 
 function AddProductForm() {
   const [name, setName] = useState('')
   const [description, setDescription] = useState('')
   const [price, setPrice] = useState('')
-  const [quantity, setQuantity] = useState('')
   const [availability, setAvailability] = useState('')
-
-  const prisma = new PrismaClient()
-
-  async function AddProduct(name, description, price, availability) {
-  const product = await prisma.product.create({
-    data: {
-      name,
-      description,
-      price,
-      quantity,
-      availability
-    }
-  })
-  return product
-}
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    await AddProduct(name, description, parseFloat(price), availability)
+
+    const response = await fetch('/api/addProduct', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name,
+        description,
+        price: parseFloat(price),
+        availability,
+      })
+    })
+
+    const product = await response.json()
+
+    // handle the response from the serverless function
+
     setName('')
     setDescription('')
     setPrice('')
-    setQuantity('')
     setAvailability('')
   }
 
