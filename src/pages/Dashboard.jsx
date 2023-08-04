@@ -1,4 +1,4 @@
-// import AddProductForm from "../components/addProductForm";
+import AddProductForm from "../components/addProductForm";
 import { useState } from 'react';
 
 export default function Dashboard() {
@@ -19,7 +19,7 @@ export default function Dashboard() {
             {showAddProductForm ? null :
             <dialog>
                 <div onClick={ToggleViewAddProductForm}>X</div>
-                {/* <AddProductForm /> */}
+                <AddProductForm />
             </dialog>
     }
         </div>
