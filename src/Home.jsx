@@ -6,7 +6,7 @@ import './styles/home.css'
 export default function Home() {
     return (
         <div className="home container">
-            <h2 className="home-title">Welcome to the Adidas Tech Sale!</h2>
+            <h2 className="home-title">Welcome to the Company Tech Sale!</h2>
             <div className="home hero">{<img src="computer-organized.jpg" alt="Hero Picture"/>}</div>
             <div className="Links">
                 <Link className="link-container" to='/brochure'>
