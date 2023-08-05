@@ -3,7 +3,8 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    max-height: fit-content;
     width: 96.5vw;
     max-width: 1280px;
     margin: 0.5rem;
@@ -12,6 +13,7 @@
     font-family: monospace;
     z-index: 1;
     box-shadow: -4px 7px 0 0 #000000;
+    padding-bottom: 0.7rem;
 }
 
 .container h2 {
@@ -207,11 +209,13 @@
 }
 
 .form-container {
+    position: absolute;
+    top: 5rem;
+    left: 2.6rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0.5rem;
     padding: 0.5rem;
     background-color: #ffffff;
     border: 2px solid #000000;
@@ -226,11 +230,13 @@
 }
 
 .close-form {
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    top: 0.3rem;
-    right: 0.3rem;
+    top: 0.7rem;
+    left: 2.6rem;
+    margin-bottom: 1rem;
     padding: 0.2rem;
     color: #000000;
     font-size: 1.2rem;
@@ -239,8 +245,10 @@
     border-radius: 0.4rem;
     width: 2.5rem;
     background-color: rgb(255, 255, 255);
+    box-shadow: -3px 5px 0 0 #000000;
     cursor: pointer;
 }
+
 
 .input-section {
     margin: 0.2rem;
@@ -266,7 +274,7 @@
     justify-content: space-between;
     align-items: center;
     font-weight: bolder;
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 
 .input-section input {
@@ -280,4 +288,22 @@
     -moz-border-radius: 0.4rem;
     -ms-border-radius: 0.4rem;
     -o-border-radius: 0.4rem;
+}
+
+.button-cont {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit-button {
+    width: 7rem;
+    padding: 0.8rem;
+    align-self: center;
+    font-size: 1.1rem;
+    font-family: monospace;
+    font-weight: bolder;
+    cursor: pointer;
 }

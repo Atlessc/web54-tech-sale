@@ -12,6 +12,7 @@
     font-family: monospace;
     font-size: 1.5rem;
     font-weight: bolder;
+    background: linear-gradient(156deg, rgba(59,47,251,0.7) 0%, rgba(29,29,157,0.7) 42%, rgba(89,23,148,0.7) 80%, rgba(89,23,148,0.7) 81%);
 }
 
 .nav-menu-btn {
@@ -26,6 +27,7 @@
     box-shadow: -2px 4px 0 0 #000000;
     font-size: 1.4rem;
     font-weight: bold;
+    background-color: rgb(255, 255, 255);
 }
 
 .nav-list-container {
