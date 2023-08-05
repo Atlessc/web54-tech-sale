@@ -13,7 +13,7 @@ export default function NavBar() {
 
     return (
         <div className="NavBar">
-            <div className='nav-title'>Adi-Tech Sale</div>
+            <div className='nav-title'>Company Tech Sale</div>
             <div className='nav-menu-btn' onClick={ToggleMenu}>Menu</div>
             {menuOpen ?
             <div className='nav-list-container'>
