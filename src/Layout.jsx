@@ -6,9 +6,9 @@ export default function Layout() {
     return (
       <div className='app-container'>
         <NavBar />
-        <main>
+        <div className='Main'>
           <Outlet />
-        </main>
+        </div>
         <footer className='footer'>Footer</footer>
       </div>
     );

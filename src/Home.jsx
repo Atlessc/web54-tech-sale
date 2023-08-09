@@ -1,13 +1,22 @@
 import { Link } from "react-router-dom";
-import './styles/styles.css'
 import './styles/home.css'
-
+import { useEffect, useState } from 'react';
 
 export default function Home() {
+    const [width, setWidth] = useState(window.innerWidth);
+    function WindowSize() {
+      useEffect(() => {
+        const handleResize = () => setWidth(window.innerWidth);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+      }, []);
+      return (
+        <div className="screen"><u>Screen Width Is {width}px</u></div>
+      )
+    }
     return (
         <div className="home container">
-            <h2 className="home-title">Welcome to the Company Tech Sale!</h2>
-            <div className="home hero">{<img src="computer-organized.jpg" alt="Hero Picture"/>}</div>
+            <div className="hero-section">{<img src="computer-organized.jpg" alt="Hero Picture" className="img"/>}<h2 className="home-title">Welcome to the Company Tech Sale!</h2></div>
             <div className="Links">
                 <Link className="link-container" to='/brochure'>
                 <div>
@@ -21,7 +30,10 @@ export default function Home() {
                     <div className="link-title">Online <br/>Store</div>
                 </div>
                 </Link>
+                
             </div>
+            <WindowSize />
+
         </div>
     );
 }

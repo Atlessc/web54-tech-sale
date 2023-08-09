@@ -1,7 +1,13 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import routes from './components/Routes';
+import { useEffect, useState } from 'react';
 
 function App() {
+
+
+// create a useeffect that console logs the width of the window
+
+
   return (
     <BrowserRouter>
       <Routes>
