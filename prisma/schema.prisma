@@ -7,7 +7,35 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("VITE_DATABASE_URL")
+  url = env("VITE_POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("VITE_POSTGRES_URL_NON_POOLING") // uses a direct connection
+  shadowDatabaseUrl = env("VITE_POSTGRES_URL_NON_POOLING") // used for migrations
+}
+
+model Transaction {
+  id          Int      @id @default(autoincrement())
+  createdAt   DateTime @default(now())
+  userId      Int
+  user        User     @relation(fields: [userId], references: [id])
+  products    Product[] @relation("TransactionToProduct")
+  price       Float
+  purchaseType String
+  adminUserId Int?
+  adminUser   AdminUser? @relation(fields: [adminUserId], references: [id])
+  appointment DateTime?
+}
+
+model User {
+  id           Int           @id @default(autoincrement())
+  email        String        @unique
+  transactions Transaction[]
+  canPurchase  Boolean       @default(true)
+}
+
+model AdminUser {
+  id          Int          @id @default(autoincrement())
+  email       String       @unique
+  transactions Transaction[]
 }
 
 model Product {
@@ -16,14 +44,8 @@ model Product {
   name        String
   description String
   price       Float
-  availability String
+  availability Boolean @default(true)
   quantity     Int
-}
-
-model AdminUser {
-  id       Int      @id @default(autoincrement())
-  email    String   @unique
-  password String
-  name     String
+  transactions Transaction[] @relation("TransactionToProduct")
 }
 

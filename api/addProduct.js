@@ -10,6 +10,7 @@ export default async function addProduct(req, res) {
       name,
       description,
       price,
+      quantity,
       availability
     }
   })
