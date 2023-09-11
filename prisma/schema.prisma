@@ -9,7 +9,6 @@ datasource db {
   provider = "postgresql"
   url = env("VITE_POSTGRES_PRISMA_URL") // uses connection pooling
   directUrl = env("VITE_POSTGRES_URL_NON_POOLING") // uses a direct connection
-  shadowDatabaseUrl = env("VITE_POSTGRES_URL_NON_POOLING") // used for migrations
 }
 
 model Transaction {
